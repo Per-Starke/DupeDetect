@@ -1,0 +1,8 @@
+body {
+    background-color: FFFFFF;
+    background-image: url(./img/GeocachingLogo.jpg);
+    background-repeat: no-repeat;
+    background-position: 100%, 0%;
+    background-size: 200px, 200px;
+    background-attachment: fixed;
+    }
