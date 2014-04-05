@@ -1,6 +1,6 @@
 __author__ = 'Per'
 # 27.12.13
-# working on it
+# works
 
 from class_logentry import logentry
 from class_cachelogs import cachelogs
