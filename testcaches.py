@@ -22,26 +22,26 @@ Name         : testcache
 
 >>> log1.add_logentry(le1)
 
-#>>> log1.getNrOfLogEntries()
-#1
-#>>> log1.print()
-#Gccode       : gctesti
-#Name         : testcache
-#<BLANKLINE>
-#(1234, 'logtype      :', 'found', 'logdate      :', 210113, 'logtext      :', 'asfd...')
-#<BLANKLINE>
+# >>> log1.getNrOfLogEntries()
+# 1
+# >>> log1.print()
+# Gccode       : gctesti
+# Name         : testcache
+# <BLANKLINE>
+# (1234, 'logtype      :', 'found', 'logdate      :', 210113, 'logtext      :', 'asfd...')
+# <BLANKLINE>
 >>> log1.add_logentry(le2)
 
-#>>> log1.getNrOfLogEntries()
-#2
-#>>> log1.print()
-#Gccode       : gctesti
-#Name         : testcache
-#<BLANKLINE>
-#(1234, 'logtype      :', 'found', 'logdate      :', 210113, 'logtext      :', 'asfd...')
-#<BLANKLINE>
-#(2345, 'logtype      :', 'found', 'logdate      :', 220214, 'logtext      :', 'asdfjld...')
-#<BLANKLINE>
+# >>> log1.getNrOfLogEntries()
+# 2
+# >>> log1.print()
+# Gccode       : gctesti
+# Name         : testcache
+# <BLANKLINE>
+# (1234, 'logtype      :', 'found', 'logdate      :', 210113, 'logtext      :', 'asfd...')
+# <BLANKLINE>
+# (2345, 'logtype      :', 'found', 'logdate      :', 220214, 'logtext      :', 'asdfjld...')
+# <BLANKLINE>
 >>> le1.logtype()
 'found'
 >>> le1.logdate()

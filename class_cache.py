@@ -12,8 +12,8 @@ class cache(object):
         print("Name         :", self.Gcname)
 
 
-        def gccode(self):
-        return(self.Gccode)
+    def gccode(self):
+            return(self.Gccode)
     def gcname(self):
         return(self.Gcname)
 
