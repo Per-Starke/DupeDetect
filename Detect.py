@@ -25,11 +25,21 @@ log1.add_logentry(le1)
 log1.add_logentry(le2)
 log1.add_logentry(le3)
 
+# dupes = log1.NoticeDupes()
 
 x = log1.getLogs()
-i = len(x)
+y = []
+i = []
+# i = len(x)
+for f in range(1, len(x)+1):
+    # print(x[-f].Logtype)
+    if x[-f].Logtype != 'found':
+        i.append(x[-f])
+    else:
+        y.append(x[-f])
+f = len(y)
 
-if i >= 2:
+if f >= 2:
     fo = open("DupeDetectWeb.html", "w")
     fo.write("<html>\n <head>\n<title>  GC DupeDetect </title>\n <link href='DupeDetectColors.css' rel='stylesheet'/> \n"
              "</head>\n<body>\n<img src='./img/dupedetect.png' hight='45'/>\n"
@@ -41,12 +51,20 @@ else:
              "</head>\n<body>\n<img src='./img/dupedetect.png' hight='45'/>\n <h3 style='background-color: red; color: blue'> No dupes detected! </h3>")
 
 
-if i >= 2:
-    fo.write(" \n <h3 > These are the logs:  </h3> \n")
-    for log in log1.Logs:
+if f >= 2:
+    fo.write(" \n <h3 > These are the found-logs:  </h3> \n")
+    for log in y:
         x = str(log.printlog())
         y = str(log.logid())
-        fo.write(" <h4> <a href='http://www.geocaching.com/seek/log.aspx?LID=" + y + "'target='blank'> "+ x +" </a>""</h4> \n")
+        fo.write(" <h4> <a href='http://www.geocaching.com/seek/log.aspx?LID=" + y + "'target='blank'> "+ x +" </a> </h4> \n")
+
+for log in i:
+    x = str(log.printlog())
+    y = str(log.logid())
+    fo.write(" \n  <p>  </p> \n  <p>  </p> \n <h3> These are the other logs: </h3> \n"
+            " <h4> <a href='http://www.geocaching.com/seek/log.aspx?LID=" + y + "'target='_blank'> "+ x + " </a> </h4> \n")
+
+
 
 fo.write("\n</body>\n</html>")
 fo.close
