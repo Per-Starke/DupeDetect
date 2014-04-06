@@ -1,4 +1,4 @@
-## [![DupeDetect](https://raw.githubusercontent.com/Per-Starke/DupeDetect/master/img/GeocachingLogo.jpg)](http://5-4-fun.blogspot.de/) DupeDetect
+## [![DupeDetect](https://github.com/Per-Starke/DupeDetect/blob/master/img/DupeDetectLogo.jpg?raw=true)](http://5-4-fun.blogspot.de/) DupeDetect
 
 
 
