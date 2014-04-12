@@ -1,6 +1,7 @@
 __author__ = 'Per'
-# 25.12.13
-# works, extendable
+# 12.04.14
+# works
+
 
 class cache(object):
     def __init__(self, gccode, gcname):

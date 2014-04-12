@@ -1,11 +1,12 @@
 __author__ = 'Per'
-# 27.12.13
-# works
+# 12.04.14
+# works, working on XML-Parser-Integration minidom
 
 from class_logentry import logentry
 from class_cachelogs import cachelogs
 from class_cache import cache
-import pickle as p
+import minidom
+
 
 
 

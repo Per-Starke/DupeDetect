@@ -1,6 +1,7 @@
 __author__ = 'Per'
-# 25.12.13
-# works for first, extendable
+# 12.04.14
+# works
+
 
 class logentry(object):
     def __init__(self, logid, logtype, logdate, logtxt):
