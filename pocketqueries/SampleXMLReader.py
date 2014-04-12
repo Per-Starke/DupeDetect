@@ -5,27 +5,32 @@ import xml.dom.minidom
 
 filename = 'test-cachelist.xml'
 
-def printWayPoint( wpt ):
- 	print "lat: %s, lon: %s " % (wpt.attributes['lat'].value, wpt.attributes['lon'].value)
- 	print 'name: ', wpt.getElementsByTagName('name')[0].firstChild.wholeText
- 	print 'desc: ', wpt.getElementsByTagName('desc')[0].firstChild.wholeText
+def printWayPoint( wpt, nrOfLogs ):
+	wname = wpt.getElementsByTagName('name')[0].firstChild.wholeText
+	print "Waypoint %s contains %d logs" % (wname, nrOfLogs)
+ 	print '    desc: ', wpt.getElementsByTagName('desc')[0].firstChild.wholeText
+ 	print "    lat: %s, lon: %s " % (wpt.attributes['lat'].value, wpt.attributes['lon'].value)
+ 	print '-'*10, "\n"
+
+def printFileStatistics( dom, waypoints ):
+	nrOfLogs = dom.getElementsByTagName('groundspeak:log').length
+	nrOfCaches = dom.getElementsByTagName('groundspeak:cache').length
+
+	print "\n"*3
+	print "File Statistics:"
+	print 'file %s contains %d waypoints, %d caches and %d logs.' % (filename, waypoints.length, nrOfCaches, nrOfLogs)
+	print '='*70, "\n"
 
 
 
 dom = xml.dom.minidom.parse(filename)
-
 waypoints=dom.getElementsByTagName('wpt')
+printFileStatistics(dom, waypoints)
 
-print 'file %s contains %d waypoints' % (filename, waypoints.length)
 
-caches = dom.getElementsByTagName('groundspeak:cache')
-print '... and %d caches' % (caches.length)
-
-print '='*50 
 
 for wpt in waypoints:
-	printWayPoint( wpt )
 	logs = wpt.getElementsByTagName('groundspeak:log')
-	print "waypoint contains %d logs" % (logs.length)
+	printWayPoint( wpt, logs.length )
     
    
