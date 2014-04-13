@@ -16,22 +16,31 @@ def printFileStatistics( dom, waypoints ):
 
 
 def printWayPoint( wpt, nrOfLogs ):
-	wname = wpt.getElementsByTagName('name')[0].firstChild.wholeText
+	wname     = getTextFromDomElement( wpt, 'name')
+	cacheName = getTextFromDomElement( wpt, 'groundspeak:name')
+	cacheDesc = getTextFromDomElement( wpt, 'desc')
 	print '-'*20
 	print "Waypoint %s contains %d logs" % (wname, nrOfLogs)
- 	print '    desc: ', wpt.getElementsByTagName('desc')[0].firstChild.wholeText
+	print "    cache %s " % (cacheName)
+ 	print '    desc: ', cacheDesc
  	print "    lat: %s, lon: %s " % (wpt.attributes['lat'].value, wpt.attributes['lon'].value)
  	
 
+
 def printLogEntry( logEntry ):
 	logId = logEntry.attributes['id'].value
-	logDate = logEntry.getElementsByTagName('groundspeak:date')[0].firstChild.wholeText
-	logType = logEntry.getElementsByTagName('groundspeak:type')[0].firstChild.wholeText
-	finder  = logEntry.getElementsByTagName('groundspeak:finder')[0].firstChild.wholeText
+	logDate = getTextFromDomElement( logEntry, 'groundspeak:date')
+	logType = getTextFromDomElement( logEntry, 'groundspeak:type')
+	finder  = getTextFromDomElement( logEntry, 'groundspeak:finder')
+	logText = getTextFromDomElement( logEntry, 'groundspeak:text' ) 
+	#logText = logEntry.getElementsByTagName('groundspeak:text')[0].firstChild.wholeText
 	print '     ', '- '*5
-	print ' '*8, 'id = %s, %s, logdate = %s by %s' % (logId, logType, logDate, finder)
+	print ' '*8, 'id = %s, %s, logdate = %s by %s, %s' % (logId, logType, logDate, finder, logText)
 
 
+
+def getTextFromDomElement( domElement, elementName ):
+	return domElement.getElementsByTagName( elementName )[0].firstChild.wholeText
 
 
 dom = xml.dom.minidom.parse(filename)
