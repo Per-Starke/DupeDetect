@@ -21,7 +21,7 @@ def printWayPoint( wpt, nrOfLogs ):
 	cacheDesc = getTextFromDomElement( wpt, 'desc')
 	print '-'*20
 	print "Waypoint %s contains %d logs" % (wname, nrOfLogs)
-	print "    cache %s " % (cacheName)
+	print "    cache: %s " % (cacheName)
  	print '    desc: ', cacheDesc
  	print "    lat: %s, lon: %s " % (wpt.attributes['lat'].value, wpt.attributes['lon'].value)
  	
@@ -41,6 +41,7 @@ def printLogEntry( logEntry ):
 
 def getTextFromDomElement( domElement, elementName ):
 	return domElement.getElementsByTagName( elementName )[0].firstChild.wholeText
+
 
 
 dom = xml.dom.minidom.parse(filename)
