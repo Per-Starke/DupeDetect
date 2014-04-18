@@ -5,13 +5,13 @@ __author__ = 'Per'
 
 class cachelogs(object):
     def __init__(self, cache):
-        self.Cache = cache
-        self.Logs = []
+        self.cache = cache
+        self.logs = []
 
     def add_logentry(self, log):
-        self.Logs.append(log)
+        self.logs.append(log)
 
     def getLogs(self):
-        return self.Logs
+        return self.logs
 
 
