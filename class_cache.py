@@ -9,8 +9,7 @@ class cache(object):
         self.gcname = gcname
 
     def printcache(self):
-        print("Gccode       :", self.Gccode)
-        print("Name         :", self.Gcname)
+        return "Gccode       :", self.gccode, "Name         :", self.gcname
 
 
     # def gccode(self):
