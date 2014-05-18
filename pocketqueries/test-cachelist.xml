@@ -49,7 +49,7 @@
          <groundspeak:date>2011-08-06T19:00:00Z</groundspeak:date>
          <groundspeak:type>Found it</groundspeak:type>
          <groundspeak:finder id="4444444">PULG42</groundspeak:finder>
-         <groundspeak:text encoded="False">found, thanx</groundspeak:text>
+         <groundspeak:text encoded="False">found</groundspeak:text>
        </groundspeak:log>
 
      </groundspeak:logs>
